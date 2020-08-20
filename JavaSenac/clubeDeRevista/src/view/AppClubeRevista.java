@@ -1,6 +1,9 @@
 package view;
 
+import java.util.Date;
+
 import model.Colecao;
+import model.Emprestimo;
 import model.Revista;
 import model.Leitor;
 
@@ -10,23 +13,31 @@ class AppClubeRevista {
 		Colecao colecao = new Colecao();
 		Revista revista = new Revista();
 		Leitor leitor = new Leitor();
+		Emprestimo emprestimo = new Emprestimo();
 		
-		leitor.codigo=80;
-		leitor.nome="João Pedro";
+		colecao.setCodigo(200);
+		colecao.setNome("Quadrinhos");
 		
-		colecao.codigo=200;
-		colecao.nome="Quadrinhos";
+		revista.setCodigo(1);
+		revista.setNome("Turma da Mônica");
+		revista.setAno(2020);
+		revista.setEdicao(8);
+		revista.setDescricao("Procurando Sansão");
+		revista.setColecao(colecao);
 		
-		revista.codigo=1;
-		revista.nome="Turma da Mônica";
-		revista.ano=2020;
-		revista.edicao=8;
-		revista.descricao="Procurando Sansão";
-		revista.colecao=colecao;
+		leitor.setCodigo(80);
+		leitor.setNome("João Pedro");
 		
-		System.out.print(revista.retornarInfo());
-		System.out.print(colecao.retornarInfo());
-		System.out.print(leitor.retornarInfo());
+		emprestimo.setNumero(122232);
+		emprestimo.setLeitor(leitor);
+		emprestimo.setRevista(revista);
+		emprestimo.setDataEmprestimo(new Date());
+		emprestimo.setDataDevolucao(new Date(2020,8,30));
+		
+		//System.out.print(revista.retornarInfo());
+		//System.out.print(colecao.retornarInfo());
+		//System.out.print(leitor.retornarInfo());
+		System.out.println(emprestimo);
 	}
 	
 }

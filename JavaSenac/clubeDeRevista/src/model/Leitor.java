@@ -1,12 +1,28 @@
 package model;
 
 public class Leitor {
-	public int codigo;
-	public String nome;
-	
-	public String retornarInfo(){
-		return "\nCódigo do Leitor: " + codigo +
-				"\nNome do Leitor: " + nome; 
+	private int codigo;
+	private String nome;
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	@Override
+	public String toString() {
+		return "Leitor [codigo=" + codigo + ", nome=" + nome + "]";
 	}
 
 }
